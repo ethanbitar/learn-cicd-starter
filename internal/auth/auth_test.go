@@ -12,7 +12,7 @@ func Test_GetAPIKey(t *testing.T) {
 		expectedError error
 	}{
 		{http.Header{"Authorization": []string{"ApiKey testone"}}, "testone", nil},
-		{http.Header{"Authorization": []string{"ApiKey testTwo"}}, "testTwo", nil},
+		{http.Header{"Authorization": []string{"ApiKey testTwo"}}, "testTwo", ErrNoAuthHeaderIncluded},
 		{http.Header{"Apthorization": []string{"ApiKey testThree"}}, "", ErrNoAuthHeaderIncluded},
 	}
 	for _, tc := range testCases {
