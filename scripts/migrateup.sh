@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f .env ]; then
-    source .env
+  source .env
 fi
 
 cd sql/schema
